@@ -8,31 +8,31 @@ fn main() {
             .read_line(&mut input_user)
             .expect("Failed to read line");
 
-        let v: Vec<&str> = input_user.split(',').collect(); // split input by comma and save in an array
+        let input_array: Vec<&str> = input_user.split(',').collect(); // split input by comma and save in an array
 
-        let mut comparison: u32 = match v[0].trim().parse() {
+        let mut biggest_number: u32 = match input_array[0].trim().parse() {
             // convert first value to int
             Ok(num) => num,
             Err(_) => continue,
         };
 
-        for index in 1..v.len() {
+        for index in 1..input_array.len() {
             //array loop to check for highest number
 
-            let array_index_value: u32 = match v[index].trim().parse() {
+            let array_index_value: u32 = match input_array[index].trim().parse() {
                 // convert value of "x" index to int for comparison
                 Ok(num) => num,
                 Err(_) => continue,
             };
 
-            if array_index_value > comparison {
+            if array_index_value > biggest_number {
                 // compare and if value bigger replace
-                comparison = array_index_value;
+                biggest_number = array_index_value;
             }
             //println!("index: {}, value: {}", index, v[index]);  // debug shit ehe
         }
         print!("\x1B[2J\x1B[1;1H"); // clears console
-        println!("Highest number is: {}", comparison); // print highest number
+        println!("Highest number is: {}", biggest_number); // print highest number
         break;
     }
 }
