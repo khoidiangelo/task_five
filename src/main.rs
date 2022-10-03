@@ -10,9 +10,7 @@ fn main() {
 
         let v: Vec<&str> = input_user.split(',').collect(); // split input by comma and save in an array
 
-        let array_value = v[0]; // first value of array for comparison
-
-        let mut comparison: u32 = match array_value.trim().parse() {
+        let mut comparison: u32 = match v[0].trim().parse() {
             // convert first value to int
             Ok(num) => num,
             Err(_) => continue,
