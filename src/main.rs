@@ -29,7 +29,6 @@ fn main() {
                 // compare and if value bigger replace
                 biggest_number = array_index_value;
             }
-            //println!("index: {}, value: {}", index, v[index]);  // debug shit ehe
         }
         print!("\x1B[2J\x1B[1;1H"); // clears console
         println!("Highest number is: {biggest_number}"); // print highest number
